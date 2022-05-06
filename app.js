@@ -1,9 +1,35 @@
 const inquirer = require('inquirer');
 const fs = require('fs')
-const generateReadMe = require('./readme-template.js')
+const generateReadMe = require('./generateMarkdown.js')
 
 const promptUser = () => {
     return inquirer.prompt([
+        {
+            type:'input',
+            name:'username',
+            message:'What is your Github username? (Required)',
+            validate: reqUser => {
+                if(reqUser) {
+                    return true;
+                } else {
+                    console.log('\nPlease provide your Github username')
+                    return false;
+                }
+            }
+        },
+        {
+            type:'input',
+            name:'email',
+            message:'What is your email address?',
+            validate: reqEmail => {
+                if (reqEmail) {
+                    return true;
+                } else {
+                    console.log('\nPlease provide your email address!')
+                    return false;
+                }
+            }
+        },
         {
             type:'input',
             name:'title',
@@ -25,7 +51,7 @@ const promptUser = () => {
                 if(descriptionInput){
                     return true;
                 } else {
-                    console.log('\nYou need to provide a description of your project.')
+                    console.log('\nPlease provide a description of your project!')
                     return false;
                 }
             }
@@ -38,7 +64,7 @@ const promptUser = () => {
                 if(installInstr){
                     return true
                 } else {
-                    console.log('You need to give installation instructions.')
+                    console.log('Please provide installation instructions!')
                     return false;
                 }
             }
@@ -51,15 +77,41 @@ const promptUser = () => {
                 if(usageInstr) {
                     return true;
                 } else {
-                    console.log('\nYou need to provide usage instructions.')
+                    console.log('\nPlease provide usage instructions!')
                     return false;
                 }
             }
         },
         {
-            type:'input',
+            type:'list',
             name:'license',
-            message:'Which license should your project have?'
+            message:'Which license should your project have?',
+            choices:['Apache', 'Boost', 'BSD', 'Eclipse', 'GNU', 'ISC', 'MIT', 'Mozilla', 'None']
+        },
+        {
+            type:'input',
+            name:'contribute',
+            message:'Would you like others to contribute to this project?',
+            validate: contInstr => {
+                if(contInstr) {
+                    return true;
+                } else {
+                    console.log("\nPlease provide instructions on how to contribute to this project!")
+                }
+            },
+        },
+        {
+            type:'input',
+            name:'test',
+            message:'How could a user test your application? (Required)',
+            validate: testInstr => {
+                if (testInstr) {
+                    return true;
+                } else {
+                    console.log('Please provide test instructions!')
+                    return false;
+                }
+            }
         }
         // add questions for contribution guidelines 
         // and test instructions
