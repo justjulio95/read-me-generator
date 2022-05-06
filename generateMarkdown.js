@@ -37,6 +37,8 @@ const renderLicenseSection = license => {
         return`## License
         
 This project is licensed under the ${license} license`
+    } else {
+        return ``
     }
 }
 
@@ -78,6 +80,7 @@ ${test}
 
 ## Questions
 If there are any questions concerning this project, please open an issue or contact me directly at ${email}.
+
 If you would like to see more of my work, please visit my [Github](https://github.com/${username}).
 `
 };
