@@ -1,6 +1,5 @@
-const {head} = require('lodash')
-
 const renderLicenseBadge = license => {
+    // switch case to check for user choice of license to display the appropriate badge.
     switch(license) {
         case 'Apache':
             return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
@@ -33,16 +32,20 @@ const renderLicenseBadge = license => {
 }
 
 const renderLicenseSection = license => {
+    //check to see if the user picked a license.
+    // if user picked a license, returns a license section for the readme file.
     if (license !== 'None') {
         return`## License
         
 This project is licensed under the ${license} license`
+    // else returns an empty string. 
     } else {
         return ``
     }
 }
 
 const generateReadMe = readmeData => {
+    // destructure the object for easy referencing in template literal
     const {username, email, title, description, install, 
         usage, license, contribute, test} = readmeData;
 

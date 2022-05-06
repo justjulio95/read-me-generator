@@ -1,6 +1,9 @@
+// import the inquirer package to be able to get user input
 const inquirer = require('inquirer');
+// import the fs package in order to write/create a new file
 const fs = require('fs')
-const generateReadMe = require('./generateMarkdown.js')
+// import the generateReadMe function from generateMarkdown.js
+const generateReadMe = require('./utils/generateMarkdown.js')
 
 const promptUser = () => {
     return inquirer.prompt([
@@ -113,15 +116,16 @@ const promptUser = () => {
                 }
             }
         }
-        // add questions for contribution guidelines 
-        // and test instructions
     ])
 }
 
+// runs the inquirer questions
 promptUser()
+// feeds the data into generateReadMe to translate user input into markdown syntax
 .then(readmeData => {
     return generateReadMe(readmeData);
 })
+// writes the data from generateReadMe into a README.md file. 
 .then(data => {
     fs.writeFile('./README.md', data, err => {
         if (err) throw Error(err)
