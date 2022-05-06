@@ -94,7 +94,7 @@ const promptUser = () => {
         {
             type:'input',
             name:'contribute',
-            message:'Would you like others to contribute to this project?',
+            message:'How would you like others to contribute to this project?',
             validate: contInstr => {
                 if(contInstr) {
                     return true;
