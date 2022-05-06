@@ -59,7 +59,8 @@ ${description}
 * [Questions](#Questions)
 
 ## Installation
-To install the necessary dependencies please run the following
+To install the necessary dependencies please run the following command:
+
 ${install}
 
 ## Usage
@@ -72,6 +73,7 @@ ${contribute}
 
 ## Tests
 To run tests, run the following command:
+
 ${test}
 
 ## Questions

@@ -1,8 +1,8 @@
 # README Generator
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 ## Description
-This is a simple app designed for the purpose of assiting anyone in the process of creating a README file.
+Test description
 
 ## Table of Contents
 * [Installation](#Installation)
@@ -13,22 +13,22 @@ This is a simple app designed for the purpose of assiting anyone in the process 
 * [Questions](#Questions)
 
 ## Installation
-To install the necessary dependencies please run the following
-`npm inquirer`
+To install the necessary dependencies please run the following command:
+
+`npm test`
 
 ## Usage
-Use at your own leisure.
+whenever
 
-## License
-        
-This project is licensed under the MIT license
+undefined
 
 ## Contributing
-fork and push to a new branch for review
+fork and push for review
 
 ## Tests
 To run tests, run the following command:
-`npm test`
+
+'npm inquirer'
 
 ## Questions
 If there are any questions concerning this project, please open an issue or contact me directly at just.julio95@gmail.com.
